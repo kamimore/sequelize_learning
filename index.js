@@ -1,5 +1,6 @@
 const express = require("express");
 var bodyParser = require("body-parser");
+require('./models/index')
 
 const app = express();
 
