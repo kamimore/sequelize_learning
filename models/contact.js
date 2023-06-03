@@ -1,19 +1,19 @@
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define(
-    "User",
+  const Contact = sequelize.define(
+    "Contact",
     {
-      firstName: {
+      permanent_address: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      lastName: {
+      current_address: {
         type: DataTypes.STRING,
       },
     },
     {
-      tableName: "users",
+      tableName: "contacts",
     }
   );
 
-  module.exports = User;
+  module.exports = Contact;
 };

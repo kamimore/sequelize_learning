@@ -1,12 +1,12 @@
 const express = require("express");
 var bodyParser = require("body-parser");
-const User = require('./models/User')
+
+require('./models/index')
 
 const app = express();
 
 app.use(bodyParser.json());
 
-User.sync({ force: true });
 
 app.get("/", function (req, res) {
   res.send("hello world");
