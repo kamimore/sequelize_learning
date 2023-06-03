@@ -1,6 +1,8 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize("employeedb", "root", "", {
   host: "localhost",
+  // to turn off the database query logging in the console.
+  logging: false,
   port: 3325,
   dialect: "mysql",
 });
@@ -20,6 +22,9 @@ sequelize
 
   db.contact = require('./contact')(sequelize, DataTypes);
   db.user = require('./user')(sequelize, DataTypes);
-  db.sequelize.sync({force: true});
+ 
+  (async () => {
+    await  db.sequelize.sync({force: true});
+  })();
 
   module.exports = db;
