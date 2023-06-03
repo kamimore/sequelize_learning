@@ -1,7 +1,7 @@
-const Sequelize = require("sequelize");
+const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize("employeedb", "root", "", {
   host: "localhost",
-  port : 3325,
+  port: 3325,
   dialect: "mysql",
 });
 
@@ -13,3 +13,5 @@ sequelize
   .catch((error) => {
     console.error("Unable to connect to the database: ", error);
   });
+
+  module.exports = sequelize;
